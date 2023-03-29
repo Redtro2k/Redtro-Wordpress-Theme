@@ -16,7 +16,7 @@
           <div class="flex-shrink-0">
             <a class="h-8 w-8 font-bold text-white" href="<?php echo home_url(); ?>"><?php bloginfo( 'name' ); ?></a>
           </div>
-          <div class="hidden md:block">
+          <div class="block md:hidden">
           <?php 
           wp_nav_menu(
               array(
@@ -30,7 +30,7 @@
         ?>
           </div>
         </div>
-        <div class="-mr-2 flex md:hidden">
+        <div class="-mr-2 hidden">
           <!-- Mobile menu button -->
           <button type="button" class="inline-flex items-center justify-center rounded-md bg-gray-800 p-2 text-gray-400 hover:bg-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800" aria-controls="mobile-menu" aria-expanded="false">
             <span class="sr-only">Open main menu</span>
@@ -48,7 +48,7 @@
     </div>
 
     <!-- Mobile menu, show/hide based on menu state. -->
-    <div class="md:hidden" id="mobile-menu">
+    <div class="hidden md:block" id="mobile-menu">
         <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
         <?php 
           wp_nav_menu(
@@ -62,10 +62,5 @@
            )
         ?>
     </div>
-  </nav>
-  <header class="bg-white shadow">
-    <div class="mx-auto max-w-7xl py-6 px-4 sm:px-6 lg:px-8">
-      <h1 class="text-3xl font-bold tracking-tight text-gray-900"><?php single_cat_title() .' '. the_title() ?></h1>
-    </div>
-  </header>
+</nav>
     

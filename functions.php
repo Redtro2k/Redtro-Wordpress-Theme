@@ -31,11 +31,20 @@ function add_tailwind_classes_to_content($content) {
   }
   add_filter('the_content', 'add_tailwind_classes_to_content');
 
+
 if(!function_exists('register_navwalker')) :
 		function register_navwalker() {
 			// require('inc/jsc-navwalker.php');
 			require_once get_template_directory() . '/inc/jsc-navwalker.php';
 		}
 endif;
-add_action('after_setup_theme', 'register_navwalker')
+add_action('after_setup_theme', 'register_navwalker');
+
+if(!function_exists('register_footer_navwalker')):
+		function register_footer_navwalker() {
+			require_once get_template_directory() . '/inc/jsc-footer-walker.php';
+		}
+endif;
+add_action('after_setup_theme', 'register_footer_navwalker');
+
 ?>
