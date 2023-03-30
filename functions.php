@@ -47,4 +47,10 @@ if(!function_exists('register_footer_navwalker')):
 endif;
 add_action('after_setup_theme', 'register_footer_navwalker');
 
+function add_archive_link_class( $link_html ) {
+    $link_html = str_replace( '<a', '<a class="text-gray-500 hover:text-gray-700"', $link_html );
+    return $link_html;
+}
+add_filter( 'get_archives_link', 'add_archive_link_class' );
+
 ?>
