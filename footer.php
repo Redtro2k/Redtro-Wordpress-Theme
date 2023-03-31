@@ -1,6 +1,6 @@
 </div>
 <div class="bg-gray-200">
-  <div class="bg-white shadow-sm pt-10 px-20">
+  <div class="bg-white shadow-sm pt-10 px-20 sm:px-4">
     <div class="grid grid-cols-4 md:grid-cols-2 gap-4 justify-items-stretch pt-9">
       <!-- Recent Post -->
       <div class="pb-4">
@@ -64,15 +64,18 @@
         </ul>
 
       </div>
+      <!-- Recent comments -->
       <div class="pb-4">
-        <h1 class="uppercase text-gray-400 font-semibold pb-2">solution</h1>
-        <ul class="block space-y-4 text-gray-500">
-          <li>Marketing</li>
-          <li>Marketing</li>
-          <li>Marketing</li>
-          <li>Marketing</li>
-          <li>Marketing</li>
-        </ul>
+        <h1 class="uppercase text-gray-400 font-semibold pb-2">Recent Comment</h1>
+        <?php 
+            $comments = get_comments(array('status' => 'approve', 'number' => '1'));
+            if(count($comments) > 0): ?>
+              <ul>
+                <?php foreach($comments as $comment): ?>
+                  <li><a class="block space-y-4 text-gray-500" href="<?php get_permalink($comment->comment_post_ID) ?>"><span class="text-indigo-500 underline font-medium hover:text-indigo-700"><?php echo $comment->comment_author ?></span> on <span class="text-indigo-500 underline font-medium hover:text-indigo-700"><?php echo get_the_title($comment->comment_post_ID) ?></span></a></li>
+                <?php endforeach; ?>
+              </ul>
+            <?php endif; ?>
       </div>
     </div>
     <div class="flex justify-between items-center md:block md:justify-start text-gray-400 border-t-2 border-b-2 border-gray-50 py-4">
@@ -80,11 +83,7 @@
         <h2 class="uppercase font-semibold">subcribe to our newsletter</h2>
         <p class="text-gray-500 font-light pt-1">The latest news, articles, and resources, sent to your inbox weekly</p>
      </div>
-     <div class="flex space-y-3 space-x-2">
-      <label class="sr-only">Search</label>
-      <input type="text" class="min-w-0 shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline focus:border-indigo-500 focus:ring-indigo-500" placeholder="Search Something...">
-      <button type="button" class="rounded-lg flex items-center justify-center text-base font-semibold leading-7 text-white py-1.5 px-3 antialiased cursor-pointer bg-indigo-600 hover:bg-indigo-700 focus:ring focus:ring-indigo-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2">Search</button>
-     </div>
+     <?php get_search_form() ?>
     </div>
     <div class="flex pb-10 md:block justify-between items-center">
       <div>
