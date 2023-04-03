@@ -94,7 +94,7 @@
           <li><a class="text-gray-400 hover:text-gray-500" href="#"><i class="fa-brands fa-github fm-2xl"></i></a></li>
         </ul>
       </div>
-      <h3 class="text-gray-400 text-sm">&copy; 2023 Gurutto Manila, Inc. All rights reserved.</h3>
+      <h3 class="text-gray-400 text-sm">&copy; 2023 <?php bloginfo('name') ?>, Inc. All rights reserved.</h3>
     </div>
   </div>
 </div>

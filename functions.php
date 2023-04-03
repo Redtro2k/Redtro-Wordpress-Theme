@@ -23,8 +23,8 @@ add_filter('nav_menu_css_class', 'add_additional_class_on_li', 1, 3);
 
 function add_tailwind_classes_to_content($content) {
 	// Find all p elements in the content and add a "text-base" class to them
-	$content = str_replace('<p>', '<p class="text-base">', $content);
 	$content = str_replace('<a', '<a class="text-indigo-600"', $content);
+	$content = str_replace('<img', '<img class="rounded-md shadow"', $content);
 	
 	// Return the modified content
 	return $content;
