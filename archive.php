@@ -1,5 +1,5 @@
 <?php get_header(); ?>
-  <main>
+  <main class="h-screen">
     <div class="mx-auto max-w-7xl py-6 sm:px-6 lg:px-8">
       <!-- Your content -->
       <div class="flex justify-center">
@@ -74,8 +74,7 @@
       </div>
     </div>
   </main>
+  
 <!-- https://play.tailwindcss.com/KzmwYKSdgF - for mobile
 https://play.tailwindcss.com/kcm8uciOjN - for desktop -->
-
-
 <?php get_footer(); ?>

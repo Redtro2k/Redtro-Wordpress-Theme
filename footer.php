@@ -1,5 +1,5 @@
 </div>
-<div class="bg-gray-200">
+<div class="bg-gray-200 font-sans">
   <div class="bg-white shadow-sm pt-10 px-20 sm:px-4">
     <div class="grid grid-cols-4 md:grid-cols-2 gap-4 justify-items-stretch pt-9">
       <!-- Recent Post -->
@@ -98,6 +98,7 @@
     </div>
   </div>
 </div>
+<script src="dist/script.js"></script>
     <?php wp_footer(); ?>
     </body>
 </html>
