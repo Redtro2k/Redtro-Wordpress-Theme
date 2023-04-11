@@ -98,7 +98,6 @@
     </div>
   </div>
 </div>
-<script src="dist/script.js"></script>
     <?php wp_footer(); ?>
     </body>
 </html>

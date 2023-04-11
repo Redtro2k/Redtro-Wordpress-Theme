@@ -4,6 +4,11 @@ function load_stylesheet() {
 }
 add_action( 'wp_enqueue_scripts', 'load_stylesheet' );
 
+function load_scripts(){
+	wp_enqueue_script('alphine', get_template_directory_uri(). '/dist/script.js', array(), '1.0.0', true);
+}
+add_action('wp_enqueue_scripts', 'load_scripts');
+
 function tailwind_menus(){
 	$locations = array(
 		'primary' => 'Header Primary Top Bar',
@@ -22,11 +27,8 @@ function add_additional_class_on_li($classes, $item, $args){
 add_filter('nav_menu_css_class', 'add_additional_class_on_li', 1, 3);
 
 function add_tailwind_classes_to_content($content) {
-	// Find all p elements in the content and add a "text-base" class to them
 	$content = str_replace('<a', '<a class="text-indigo-600"', $content);
 	$content = str_replace('<img', '<img class="rounded-md shadow"', $content);
-	
-	// Return the modified content
 	return $content;
   }
   add_filter('the_content', 'add_tailwind_classes_to_content');

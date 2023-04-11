@@ -16,7 +16,7 @@
           <div class="flex-shrink-0">
             <a class="h-8 w-8 font-bold text-white" href="<?php echo home_url(); ?>"><?php bloginfo( 'name' ); ?></a>
           </div>
-          <div class="block md:hidden">
+          <div class="hidden md:block">
           <?php 
           wp_nav_menu(
               array(
@@ -48,7 +48,7 @@
     </div>
 
     <!-- Mobile menu, show/hide based on menu state. -->
-    <div class="hidden md:block" id="mobile-menu">
+    <div class="block md:hidden" id="mobile-menu">
         <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
         <?php 
           wp_nav_menu(
