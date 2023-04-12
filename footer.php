@@ -91,18 +91,17 @@
         <?php get_search_form() ?>
       </div>
       <div class="mt-8 border-t border-gray-900/10 pt-8 md:flex md:items-center md:justify-between">
-        <div class="flex space-x-6 md:order-2">
             <?php 
               wp_nav_menu(
                   array(
                     'menu' => 'footer',
                     'container' => '',
                     'theme_location' => 'footer',
+                    'items_wrap' => '<ul id="%2$s" class="flex space-x-6 md:order-2 %2$s">%3$s</ul>',
                     'walker' => new jsc_wp_nav_footer_menu_walker()
                   )
               )
             ?>
-        </div>
         <p class="mt-8 text-xs leading-5 text-gray-500 md:order-1 md:mt-0">&copy; 2023 <?php bloginfo('name') ?>, Inc. All rights reserved.</p>
       </div>
     </div>
